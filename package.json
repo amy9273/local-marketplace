@@ -1,0 +1,20 @@
+{
+  "name": "midterms",
+  "version": "1.0.0",
+  "description": "applying node.js and express",
+  "license": "ISC",
+  "author": "Angel Amaya Balion",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "npx nodemon server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
+    "express": "^4.22.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.14"
+  }
+}

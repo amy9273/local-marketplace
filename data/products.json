@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "Refurbished Laptop",
+    "price": 25000,
+    "category": "Electronics",
+    "description": "Dell Latitude, 8GB RAM, 256GB SSD, good condition. Comes with charger.",
+    "seller": "TechReseller"
+  },
+  {
+    "id": 2,
+    "name": "Vintage Denim Jacket",
+    "price": 1200,
+    "category": "Fashion",
+    "description": "Classic blue denim jacket, size M, lightly worn. Perfect for casual wear.",
+    "seller": "ClosetClear"
+  },
+  {
+    "id": 3,
+    "name": "Wooden Coffee Table",
+    "price": 2200,
+    "category": "Home & Living",
+    "description": "Solid acacia wood coffee table, minor scratches, sturdy. 120cm x 60cm.",
+    "seller": "HomeGoodsPH"
+  },
+  {
+    "id": 4,
+    "name": "Organic Face Cream",
+    "price": 450,
+    "category": "Beauty & Personal Care",
+    "description": "Shea butter and aloe vera moisturizer, 200ml, unopened.",
+    "seller": "EcoBeauty"
+  },
+  {
+    "id": 5,
+    "name": "Yoga Mat",
+    "price": 600,
+    "category": "Sports & Outdoors",
+    "description": "Non-slip exercise mat, 6mm thick, includes carrying strap. Used only twice.",
+    "seller": "FitnessHub"
+  },
+  {
+    "id": 6,
+    "name": "The Great Gatsby (Hardcover)",
+    "price": 250,
+    "category": "Books & Stationery",
+    "description": "Classic novel, in excellent condition. Collector's edition.",
+    "seller": "Bookworm"
+  },
+  {
+    "id": 7,
+    "name": "LEGO Classic Bricks Set",
+    "price": 1500,
+    "category": "Toys & Games",
+    "description": "Over 500 pieces, suitable for ages 4+. Slightly opened but complete.",
+    "seller": "ToyChest"
+  },
+  {
+    "id": 8,
+    "name": "Car Jump Starter",
+    "price": 3200,
+    "category": "Automotive",
+    "description": "Portable 12V jump starter with USB ports. Used once, works perfectly.",
+    "seller": "AutoGear"
+  },
+  {
+    "id": 9,
+    "name": "Digital Blood Pressure Monitor",
+    "price": 1800,
+    "category": "Health",
+    "description": "Automatic upper arm monitor, LCD display, includes batteries. Brand new.",
+    "seller": "WellnessStore"
+  },
+  {
+    "id": 10,
+    "name": "Organic Brown Rice (5kg)",
+    "price": 400,
+    "category": "Groceries",
+    "description": "Freshly packed organic brown rice. Best before Dec 2025.",
+    "seller": "HealthyOptions"
+  },
+  {
+    "id": 11,
+    "name": "Bluetooth Headphones",
+    "price": 1800,
+    "category": "Electronics",
+    "description": "Wireless over-ear headphones with noise cancellation. Battery lasts up to 20 hours. Like new.",
+    "seller": "GadgetHub"
+  },
+  {
+    "id": 13,
+    "name": "Decorative Throw Pillows (Set of 2)",
+    "price": 600,
+    "category": "Home & Living",
+    "description": "Bohemian style with tassels, 18x18 inches. Slightly used but still fluffy.",
+    "seller": "HomeGoodsPH"
+  },
+  {
+    "id": 14,
+    "name": "Hair Straightener Brush",
+    "price": 950,
+    "category": "Beauty & Personal Care",
+    "description": "Ceramic brush straightener, heats up quickly. Used only a few times.",
+    "seller": "EcoBeauty"
+  },
+  {
+    "id": 15,
+    "name": "Adjustable Dumbbells (10kg pair)",
+    "price": 2200,
+    "category": "Sports & Outdoors",
+    "description": "Great for home workouts. Slight wear but fully functional.",
+    "seller": "FitnessHub"
+  },
+  {
+    "id": 16,
+    "name": "Coloring Books for Adults (Set of 3)",
+    "price": 350,
+    "category": "Books & Stationery",
+    "description": "Stress relief designs, never used. Includes colored pencils.",
+    "seller": "Bookworm"
+  },
+  {
+    "id": 17,
+    "name": "UNO Card Game",
+    "price": 200,
+    "category": "Toys & Games",
+    "description": "Classic family card game. Complete set, lightly used.",
+    "seller": "ToyChest"
+  },
+  {
+    "id": 18,
+    "name": "Car Vacuum Cleaner",
+    "price": 1500,
+    "category": "Automotive",
+    "description": "Portable 12V vacuum with attachments. Works perfectly.",
+    "seller": "AutoGear"
+  },
+  {
+    "id": 19,
+    "name": "Essential Oil Diffuser",
+    "price": 700,
+    "category": "Health",
+    "description": "Ultrasonic aromatherapy diffuser with LED light. Gently used.",
+    "seller": "WellnessStore"
+  },
+  {
+    "id": 20,
+    "name": "Organic Honey (500ml)",
+    "price": 350,
+    "category": "Groceries",
+    "description": "Pure wild honey, sealed and unopened. Harvested locally.",
+    "seller": "HealthyOptions"
+  },
+  {
+    "id": 21,
+    "name": "Smart Watch",
+    "price": 2800,
+    "category": "Electronics",
+    "description": "Fitness tracker with heart rate monitor, barely used. Compatible with Android and iOS.",
+    "seller": "TechReseller"
+  },
+  {
+    "id": 22,
+    "name": "Leather Belt",
+    "price": 500,
+    "category": "Fashion",
+    "description": "Genuine leather, brown, size 32. Minimal signs of wear.",
+    "seller": "ClosetClear"
+  },
+  {
+    "id": 23,
+    "name": "Cast Iron Skillet (10 inch)",
+    "price": 900,
+    "category": "Home & Living",
+    "description": "Pre-seasoned, great for cooking. Slight rust spot easily removable.",
+    "seller": "HomeGoodsPH"
+  },
+  {
+    "id": 24,
+    "name": "Makeup Brush Set",
+    "price": 550,
+    "category": "Beauty & Personal Care",
+    "description": "12-piece set, synthetic bristles. Used once, thoroughly cleaned.",
+    "seller": "EcoBeauty"
+  },
+  {
+    "id": 25,
+    "name": "Cycling Helmet",
+    "price": 1100,
+    "category": "Sports & Outdoors",
+    "description": "Adult size adjustable, lightweight. No cracks, like new.",
+    "seller": "FitnessHub"
+  },
+  {
+    "id": 26,
+    "name": "Notebooks (Pack of 5)",
+    "price": 250,
+    "category": "Books & Stationery",
+    "description": "Spiral-bound, college-ruled, 100 pages each. Brand new.",
+    "seller": "Bookworm"
+  },
+  {
+    "id": 27,
+    "name": "Chess Set",
+    "price": 800,
+    "category": "Toys & Games",
+    "description": "Wooden board with carved pieces, all intact. Slight wear on box.",
+    "seller": "ToyChest"
+  },
+  {
+    "id": 28,
+    "name": "Windshield Sun Shade",
+    "price": 350,
+    "category": "Automotive",
+    "description": "Folds easily, reflects heat. Used for one summer.",
+    "seller": "AutoGear"
+  },
+  {
+    "id": 29,
+    "name": "Resistance Bands Set",
+    "price": 650,
+    "category": "Health",
+    "description": "5 levels of resistance, includes door anchor. Like new.",
+    "seller": "WellnessStore"
+  },
+  {
+    "id": 30,
+    "name": "Organic Coffee Beans (1kg)",
+    "price": 600,
+    "category": "Groceries",
+    "description": "Arabica, medium roast, sealed bag. Best before 2026.",
+    "seller": "HealthyOptions"
+  },
+  {
+    "id": 31,
+    "name": "Wireless Earphonse",
+    "price": 450,
+    "category": "Electronics",
+    "description": "Redmi wireless earphones, barely used, works very well.",
+    "seller": "Amaya"
+  }
+]
