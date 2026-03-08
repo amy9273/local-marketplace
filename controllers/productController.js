@@ -92,8 +92,8 @@ exports.checkID = (req, res, next, val) => {
 
 // GET /api/v1/products
 exports.getAllProducts = async (req, res) => {
-	const products = Product.find();
 	try {
+    const products = await Product.find();
 		res.status(200).json({
 			status: 'success',
 			requestedAt: req.requestTime,
@@ -126,44 +126,19 @@ exports.getProduct = async (req, res) => {
 };
 
 // POST /api/v1/products
-exports.createProduct = (req, res) => {
-	const { name, price, category, description, seller } = req.body;
-	const priceValue = String(price).trim();
-	const parsedPrice = parseFloat(priceValue);
-	if (isNaN(parsedPrice) || parsedPrice < 0) {
-		return res.status(400).json({
-			status: 'fail',
-			message: 'Price must be a valid positive number',
-		});
-	}
-
-	const products = getProducts();
-	const maxId =
-		products.length > 0 ? Math.max(...products.map((p) => p.id)) : 0;
-
-	const newProduct = {
-		id: maxId + 1,
-		name: name.trim(),
-		price: parsedPrice,
-		category: category.trim(), // Store as number, not string
-		description: description.trim(),
-		seller: seller.trim(),
-	};
-
+exports.createProduct = async(req, res) => {
 	try {
-		products.push(newProduct);
-		fs.writeFileSync(dataPath, JSON.stringify(products, null, 2));
-
-		res.status(201).json({
-			status: 'success',
-			data: { product: newProduct },
-		});
-	} catch (err) {
-		res.status(500).json({
-			status: 'error',
-			message: 'Failed to save product',
-		});
-	}
+    const newProduct = await Product.create(req.body);
+    res.status(201).json({
+      status: 'success',
+      data: { product: newProduct },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
+    });
+  }
 };
 
 // PATCH /api/v1/products/:id
@@ -185,25 +160,18 @@ exports.updateProduct = async (req, res) => {
 };
 
 // DELETE /api/v1/products/:id
-exports.deleteProduct = (req, res) => {
-	const products = req.products;
-	const id = req.product.id;
-
-	products.splice(req.productIndex, 1);
-
-	try {
-		fs.writeFileSync(dataPath, JSON.stringify(products, null, 2));
-
-		// Use 200 instead of 204 to allow response body
-		res.status(200).json({
-			status: 'success',
-			message: `Product with ID ${id} deleted successfully`,
-			data: null,
-		});
-	} catch (err) {
-		res.status(500).json({
-			status: 'error',
-			message: 'Failed to delete product',
-		});
-	}
+exports.deleteProduct = async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+      status: 'success',
+      message: `Product with ID ${req.params.id} deleted successfully`,
+      data: null,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
+    });
+  }
 };
