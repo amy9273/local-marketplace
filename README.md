@@ -17,7 +17,7 @@ cd 4-natours
 
 ```bash
 npm install express dotenv@7.0.0 morgan slugify cross-env nodemon
-npm install --save-dev mongoose mongodb
+npm install --save-dev mongoose@latest mongodb@latest
 ```
 ---
 
