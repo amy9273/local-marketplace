@@ -3,53 +3,25 @@ const path = require('path');
 
 const Product = require('../model/productModel');
 // Middleware to check request body for create/update
-exports.checkBody = (req, res, next) => {
-	if (
-		!req.body.name ||
-		!req.body.price ||
-		!req.body.category ||
-		!req.body.description ||
-		!req.body.seller
-	) {
-		return res.status(400).json({
-			status: 'fail',
-			message:
-				'Missing required fields: name, price, category, description, seller',
-		});
-	}
-	if (typeof req.body.price !== 'number') {
-		return res.status(400).json({
-			status: 'fail',
-			message: 'Price must be a number',
-		});
-	}
+
+const APIFeatures = require('./../utils/apiFeatures');
+
+exports.aliasTopProducts = (req, res, next) => {
+	req.query.limit = '3';
+	req.query.sort = '-price';
+	req.query.fields = 'name,price,category,description,seller';
 	next();
 };
 
-// Middleware to check ID (async for MongoDB)
-exports.checkID = async (req, res, next, val) => {
-	console.log(`Product id is: ${val}`);
-
-	try {
-		const product = await Product.findById(val);
-		if (!product) {
-			return res.status(404).json({
-				status: 'fail',
-				message: 'Invalid ID',
-			});
-		}
-		next();
-	} catch (err) {
-		return res.status(400).json({
-			status: 'fail',
-			message: 'Invalid ID format',
-		});
-	}
-};
 // GET /api/v1/products
 exports.getAllProducts = async (req, res) => {
 	try {
-		const products = await Product.find();
+		const features = new APIFeatures(Product.find(), req.query)
+			.filter()
+			.sort()
+			.limitFields()
+			.paginate();
+		const products = await features.query;
 		res.status(200).json({
 			status: 'success',
 			requestedAt: req.requestTime,
