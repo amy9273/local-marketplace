@@ -3,6 +3,8 @@ const productController = require('../controllers/productController');
 
 const router = express.Router();
 
+router.route('/product-category').get(productController.getProductCategory);
+
 router
 	.route('/top-3-cheap')
 	.get(productController.aliasTopProducts, productController.getAllProducts);

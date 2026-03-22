@@ -72,9 +72,13 @@ exports.createProduct = async (req, res) => {
 // PATCH /api/v1/products/:id
 exports.updateProduct = async (req, res) => {
 	try {
-		const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-			new: true,
-		});
+		const product = await Product.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{
+				new: true,
+			},
+		);
 		res.status(200).json({
 			status: 'success',
 			data: { product },
@@ -98,6 +102,42 @@ exports.deleteProduct = async (req, res) => {
 		});
 	} catch (err) {
 		res.status(400).json({
+			status: 'fail',
+			message: err,
+		});
+	}
+};
+
+exports.getProductCategory = async (req, res) => {
+	try {
+		const stats = await Product.aggregate([
+			{
+				$match: { price: { $lt: 1000 } },
+			},
+			{
+				$group: {
+					_id: { $toUpper: '$category' },
+					numProducts: { $sum: 1 },
+					avgPrice: { $avg: '$price' },
+					minPrice: { $min: '$price' },
+					maxPrice: { $max: '$price' },
+				},
+			},
+			{
+				$sort: { avgPrice: 1 },
+			},
+			// {
+			// $match: { _id: { $ne: 'EASY'}}
+			// }
+		]);
+		res.status(200).json({
+			status: 'success',
+			data: {
+				stats,
+			},
+		});
+	} catch (err) {
+		res.status(404).json({
 			status: 'fail',
 			message: err,
 		});
