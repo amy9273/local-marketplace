@@ -15,6 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 // Routes 
 app.use('/api/v1/products', productRouter); // Changed from '/' to '/api/v1/products'
 

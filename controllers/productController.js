@@ -44,8 +44,8 @@ exports.getProduct = catchAsync(async (req, res, next) => {
 	// try {
 	const product = await Product.findById(req.params.id);
 
-	if (!tour) {
-		return next(new AppError('No tour found with that ID', 404));
+	if (!product) {
+		return next(new AppError('No product found with that ID', 404));
 	}
 	res.status(200).json({
 		status: 'success',
@@ -81,8 +81,8 @@ exports.updateProduct = catchAsync(async (req, res, next) => {
 	const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
 		new: true,
 	});
-	if (!tour) {
-		return next(new AppError('No tour found with that ID', 404));
+	if (!product) {
+		return next(new AppError('No product found with that ID', 404));
 	}
 	res.status(200).json({
 		status: 'success',
@@ -100,8 +100,8 @@ exports.updateProduct = catchAsync(async (req, res, next) => {
 exports.deleteProduct = catchAsync(async (req, res, next) => {
 	// try {
 	await Product.findByIdAndDelete(req.params.id);
-	if (!tour) {
-		return next(new AppError('No tour found with that ID', 404));
+	if (!product) {
+		return next(new AppError('No product found with that ID', 404));
 	}
 	res.status(200).json({
 		status: 'success',
