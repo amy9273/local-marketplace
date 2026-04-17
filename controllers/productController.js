@@ -99,7 +99,7 @@ exports.updateProduct = catchAsync(async (req, res, next) => {
 // DELETE /api/v1/products/:id
 exports.deleteProduct = catchAsync(async (req, res, next) => {
 	// try {
-	await Product.findByIdAndDelete(req.params.id);
+	const product = await Product.findByIdAndDelete(req.params.id);
 	if (!product) {
 		return next(new AppError('No product found with that ID', 404));
 	}
